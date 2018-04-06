@@ -1,0 +1,14 @@
+{
+  "name": "todomvc-electro/website",
+  "description": "",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "TodomvcElectro\\Website\\": "src"
+    }
+  },
+  "require": {
+    "electro-modules/matisse": "^0.10.13"
+  }
+}

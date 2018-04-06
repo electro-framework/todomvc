@@ -1,0 +1,60 @@
+<Import services="app navigation session"/>
+
+<Content of=title byDefault value={navigation.currentLink.title}/>
+<Content of=description byDefault value="TodoMVC Introducer"/>
+
+  <Content prependTo=head>
+    <meta charset="UTF-8">
+    <title>{#title}</title>
+    <base href="{app.baseUrl}/">
+    <meta name="author" content="Impactwave, 2017">
+    <meta name="description" content="{#description} ">
+    <!-- OpenGraph -->
+    <!--<meta property="og:type"        content="article" />
+    <meta property="og:locale"      content="{session.getLang}" />
+    <meta property="og:site_name"   content="{#title}" />
+    <meta property="og:url"         content="{app.baseUrl}/" />
+    <meta property="og:description" content="{#description} " />
+    <meta property="og:title"       content="{#title} " />
+    <meta property="og:image"       content="{app.baseUrl + '/modules/omelro/website/i/logo-omelro-min.png'}" />
+    <link rel="shortcut icon" href="{app.baseUrl + '/modules/omelro/website/i/logo-omelro-min.png'}" type="image/x-icon">
+    <link rel="icon" href="{app.baseUrl + '/modules/omelro/website/i/logo-omelro-min.png'}" type="image/x-icon">-->
+    <!-- Mobile -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <Style src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <Style src="https://fonts.googleapis.com/css?family=Neucha|Pacifico"/>
+    <Style src="{app.baseUrl + '/node_modules/todomvc-common/base.css'}"/>
+    <Style src="{app.baseUrl + '/node_modules/todomvc-app-css/index.css'}"/>
+    <Style src="{app.baseUrl + '/modules/todomvc-electro/website/dist/css/customcss.css'}"/>
+    <Script src="https://code.jquery.com/jquery-3.3.1.js"/>
+
+    <Style>
+      .FlashMessage {
+        position: fixed;
+        top:0;
+        width: 100%;
+        z-index: 9999;
+      }
+    </Style>
+    <!--<Script>
+      $(document).ready(function(){
+        window.setTimeout(function () {
+          $(".FlashMessage").fadeOut(3000);
+        }, 6000);
+      });
+    </Script>-->
+  </Content>
+
+  <!DOCTYPE HTML>
+  <html lang="{session.getLang}" {#htmlAttrs|*}>
+    <head {#headAttrs|*}>
+      {#head|*}
+      <Include styles/>
+    </head>
+    <body {#bodyAttrs|*} data-spy="scroll" data-target="#main-menu" data-offset="130">
+    {#body|*}
+      <Include scripts/>
+      {#extraContent|*}
+    </body>
+  </html>

@@ -1,0 +1,44 @@
+{
+  "name": "electro/electro",
+  "description": "The Electro PHP Web Framework",
+  "keywords": [
+    "framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/electro/electro",
+  "authors": [
+    {
+      "name": "Impactwave",
+      "email": "impactwave@impactwave.com",
+      "homepage": "http://impactwave.com"
+    },
+    {
+      "name": "Cláudio Silva",
+      "email": "claudio.silva@impactwave.com"
+    }
+  ],
+  "type": "project",
+  "config": {
+    "preferred-install": "dist",
+    "vendor-dir": "private/packages",
+    "bin-dir": "bin"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "electro/framework": "^0.10",
+    "electro-modules/matisse": "^0.10.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "private/src",
+      "TodomvcElectro\\Website\\": "private/modules/todomvc-electro/website/src"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": "App\\Bootloader::runInitCommand",
+    "post-install-cmd": "App\\Bootloader::runInitCommand",
+    "post-update-cmd": "App\\Bootloader::runUpdateCommand",
+    "pre-package-uninstall": "App\\Bootloader::runUninstallCommand"
+  }
+}

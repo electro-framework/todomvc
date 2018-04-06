@@ -1,0 +1,16 @@
+{
+  "name": "todomvc-electro",
+  "version": "1.0.0",
+  "description": "> *Electro* is a modern PHP web framework for developing web applications and websites.",
+  "main": "index.js",
+  "dependencies": {
+    "todomvc-app-css": "^2.1.1",
+    "todomvc-common": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

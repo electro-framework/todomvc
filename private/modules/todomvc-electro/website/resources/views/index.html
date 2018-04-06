@@ -1,0 +1,114 @@
+<Import service="navigation session"/>
+
+<Content of="main">
+
+    <section class="todoapp">
+        <header class="header">
+            <a href="{navigation.home}"><h1>Todos</h1></a>
+            <form id="insertOrDeleteForm" class="todo-form" method="POST" action="insertNewTodo">
+                <input id="inputTodo" name="inputTodo" class="new-todo" placeholder="What needs to be done?"
+                       {navigation.currentLink== navigation.home|then "autofocus"}
+                required>
+                <input type="hidden" id="todoId" name="todoId">
+            </form>
+        </header>
+        <If {countAllTodos !=0}>
+            <section class="main">
+                <form id="markAllTodosCompletedForm" method="POST" action="markAllTodosCompleted">
+                    <input id="toggle-all" class="toggle-all" type="checkbox"> <!-- Mark task as completed -->
+                    <label for="toggle-all">Mark all as complete</label>
+                </form>
+                <ul class="todo-list">
+                    <For each=record of="{todos}">
+                        <li class="{props.id == record.id|then 'editing'} {record.active == 0|then 'completed'}">
+                            <If {props.id== record.id}>
+                                <form method="POST" action="updateTodo/{record.id}">
+                                    <input name="inputUpdateTodo" type="text" class="edit" value="{record.name}"
+                                           autofocus
+                                           onfocus="var temp_value=this.value; this.value=''; this.value=temp_value"
+                                           required>
+                                </form>
+                            </If>
+                            <div class="view">
+                                <form class="todoCompletedForm" method="POST" action="todoCompleted/{record.id}">
+                                    <input name="checkBCompleted" class="toggle" type="checkbox" value="1"
+                                           {record.active== 0|then 'checked'}>
+                                    <label ondblclick="editTodo('{navigation.edit|link record.id}')">{record.name}</label>
+                                </form>
+                                <form method="POST" action="deleteTodo/{record.id}">
+                                    <button type="submit" class="destroy"/>
+                                </form>
+                            </div>
+                        </li>
+                    </For>
+                </ul>
+            </section>
+        </If>
+        <If {countAllTodos !=0}>
+            <footer class="footer">
+                <If {countTodos== 1}><span class="todo-count"><strong>{countTodos} item left</strong></span>
+                    <Else><span class="todo-count"><strong>{countTodos} items left</strong></span></Else>
+                </If>
+                <ul class="filters">
+                    <form id="filterTodos" action="filterTodos" method="POST">
+                        <li>
+                            <a class="todoFilters {session.filter == 'all'|then 'selected'} {session.filter == ''|then 'selected'}"
+                               data-value="all">All</a>
+                        </li>
+                        <li>
+                            <a class="todoFilters {session.filter == 'active'|then 'selected'}" data-value="active">Active</a>
+                        </li>
+                        <li>
+                            <a class="todoFilters {session.filter == 'completed'|then 'selected'}"
+                               data-value="completed">Completed</a>
+                        </li>
+                    </form>
+                </ul>
+                <If {countTodosCompleted !=0}>
+                    <form method="POST" action="clearTodoCompleted">
+                        <button type="submit" class="clear-completed">Clear completed</button>
+                    </form>
+                </If>
+            </footer>
+        </If>
+
+    </section>
+
+    <Script>
+        function editTodo(url) {
+            window.location.href = url;
+        }
+
+        $(function () {
+            $('input[name=checkBCompleted]').change(function (ev) {
+                ev.stopPropagation();
+                $(this).parent('form').submit();
+            });
+
+            $('#toggle-all').click(function () {
+                $('input[name=checkBCompleted]').prop('checked', true);
+                $('#markAllTodosCompletedForm').prop('action', 'markAllTodosCompleted').submit();
+            });
+
+            $('a.todoFilters').click(function () {
+                valor = $(this).attr('data-value');
+                $('#filterTodos').prop('action', 'filterTodos/' + valor).submit();
+            });
+
+
+            $('section.todoapp').click(function (e) {
+                e.stopPropagation();
+            });
+
+            $('html').click(function () {
+                valor = $('body').attr('value');
+                if (valor == ("editingMode")){
+                    window.location.href = "";
+                }
+            });
+        });
+    </Script>
+</Content>
+
+<Content of=bodyAttrs value="{string}"/>
+<Include view="layouts/main.html"/>
