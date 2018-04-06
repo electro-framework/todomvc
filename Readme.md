@@ -1,10 +1,10 @@
 # Electro TodoMVC Example
 
 > *Electro* is a modern PHP web framework for developing web applications and websites.
-You can check here about Electro Framework
+You can check [here](https://github.com/electro-framework/electro) about Electro Framework
 
-**This repository provides a standard installation of the framework.
-Use it as a starting point for developing a project based on Electro.**
+**This repository provides a example [TodoMVC](http://todomvc.com/) of the framework.
+Use it to know project based on Electro.**
 
 ## Installation
 
@@ -13,7 +13,6 @@ Use it as a starting point for developing a project based on Electro.**
 - PHP >= 5.6
 - Composer
 - Npm
-- Bower (**Optional**)
 - PHP Extensions:
   - PDO
   - CURL
@@ -38,10 +37,10 @@ On your project's root directory, type:
 composer install
 ```
 
-If you don't have Bower installed on your machine, the command will get an error caused by that. Ignore it, Bower is not required for this project.
+**If you don't have Bower installed on your machine, the command will get an error caused by that. Ignore it, Bower is not required for this project.**
 
 
-### Using the framework's Command Line Interface (workman)
+### #2 Using the framework's Command Line Interface (workman)
 
 Electro comes with a command line interface (CLI), called `workman`, that allows you to perform several tasks from the command line.
 
@@ -50,10 +49,10 @@ Electro comes with a command line interface (CLI), called `workman`, that allows
 On your project's root directory, type:
 
 ```bash
-workman init
+./bin workman init
 ```
 
-The command will 
+The command will generate an .env file.
 ## License
 
 The Electro framework is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT).
