@@ -3,7 +3,7 @@
 > *Electro* is a modern PHP web framework for developing web applications and websites.
 You can check [here](https://github.com/electro-framework/electro) about Electro Framework
 
-**This repository provides a example [TodoMVC](http://todomvc.com/) of the framework.
+**This repository provides an example [TodoMVC](http://todomvc.com/) of the framework.
 Use it to know project based on Electro.**
 
 ## Installation
