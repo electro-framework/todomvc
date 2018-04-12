@@ -1,10 +1,13 @@
 # Electro TodoMVC Example
 
 > *Electro* is a modern PHP web framework for developing web applications and websites.
-You can check [here](https://github.com/electro-framework/electro) about Electro Framework
 
-**This repository provides an example [TodoMVC](http://todomvc.com/) of the framework.
-Use it to know project based on Electro.**
+> To find out more about the Electro framework, [click here](https://github.com/electro-framework/electro).
+
+This repository contains a very simple example application that manages a list of TO DOs.
+
+Although this is not a Javascript framework, we liked the concept behind [TodoMVC](http://todomvc.com), so we decided to create an example application for Electro that uses the same template and operation logic.
+
 
 ## Installation
 
@@ -25,11 +28,11 @@ Electro uses [Composer](http://getcomposer.org) to manage its dependencies. So, 
 
 #### Install Npm
 
-This example uses [Npm](https://www.npmjs.com/get-npm) to manage its dependencies. So, before using the example, you will need to make sure you have Npm installed on your machine.
+This example uses [Npm](https://www.npmjs.com/get-npm) to manage its dependencies. So, before using the example, you will need to make sure you have **npm** installed on your machine.
 
-## Managing the installation
+## Installing
 
-### #1 Using Composer
+### Step 1
 
 On your project's root directory, type:
 
@@ -37,10 +40,9 @@ On your project's root directory, type:
 composer install
 ```
 
-**If you don't have Bower installed on your machine, the command will get an error caused by that. Ignore it, Bower is not required for this project.**
+> If you don't have Bower installed on your machine, the command will show an error message during installation. You may ignore it, as Bower is not required for this project.
 
-
-### #2 Using the framework's Command Line Interface (workman)
+### Step 2
 
 Electro comes with a command line interface (CLI), called `workman`, that allows you to perform several tasks from the command line.
 
@@ -49,10 +51,11 @@ Electro comes with a command line interface (CLI), called `workman`, that allows
 On your project's root directory, type:
 
 ```bash
-./bin workman init
+bin/workman init
 ```
 
-The command will generate an .env file.
+This command will perform some task and generate an `.env` file.
+
 ## License
 
 The Electro framework is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT).
