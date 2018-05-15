@@ -34,6 +34,19 @@ This example uses [Npm](https://www.npmjs.com/get-npm) to manage its dependencie
 
 ### Step 1
 
+##### Clone this project to a folder on your computer.
+
+One way to do it is using the command-line:
+
+```bash
+git clone https://github.com/electro-framework/todomvc.git
+cd todomvc
+```
+
+### Step 2
+
+##### Install all the required packages (including the Electro framework).
+
 On your project's root directory, type:
 
 ```bash
@@ -42,11 +55,11 @@ composer install
 
 > If you don't have Bower installed on your machine, the command will show an error message during installation. You may ignore it, as Bower is not required for this project.
 
-### Step 2
+### Step 3
 
-Electro comes with a command line interface (CLI), called `workman`, that allows you to perform several tasks from the command line.
+##### Initialize the app
 
-> The tasks/commands that are available depend on which plugins are installed. Your application may also provide its own commands.
+> Electro comes with a command line interface (CLI), called `workman`, that allows you to perform several tasks from the command line.
 
 On your project's root directory, type:
 
@@ -54,7 +67,27 @@ On your project's root directory, type:
 bin/workman init
 ```
 
-This command will perform some task and generate an `.env` file.
+## Running the web application
+
+### Step 1
+
+##### Start a web server
+
+You can use an Apache Web Server you have already installed, or you may use Electro's built-in web server.
+
+##### Using the built-in web server
+
+On your project's root directory, type:
+
+```bash
+bin/workman server:start
+```
+
+### Step 2
+
+Open the web application on your browser at [http://localhost:8000](http://localhost:8000).
+
+> If you are using the built-in werb server and you are done using the application, you may run the `bin/workman server:stop` command to stop it.
 
 ## License
 
