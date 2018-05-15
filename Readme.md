@@ -1,13 +1,8 @@
 # Electro TodoMVC Example
 
-> *Electro* is a modern PHP web framework for developing web applications and websites.
+This repository contains a very simple demonstration web application that manages a list of TO DOs, made with the [Electro framework](https://github.com/electro-framework/electro).
 
-> To find out more about the Electro framework, [click here](https://github.com/electro-framework/electro).
-
-This repository contains a very simple example application that manages a list of TO DOs.
-
-Although this is not a Javascript framework, we liked the concept behind [TodoMVC](http://todomvc.com), so we decided to create an example application for Electro that uses the same template and operation logic.
-
+> Although this is not a Javascript framework, we liked the concept behind [TodoMVC](http://todomvc.com), so we decided to create an example application for Electro that uses the same template and operation logic.
 
 ## Installation
 
@@ -59,15 +54,13 @@ composer install
 
 ##### Initialize the app
 
-> Electro comes with a command line interface (CLI), called `workman`, that allows you to perform several tasks from the command line.
-
 On your project's root directory, type:
 
 ```bash
 bin/workman init
 ```
 
-## Running the web application
+## Running the app
 
 ### Step 1
 
